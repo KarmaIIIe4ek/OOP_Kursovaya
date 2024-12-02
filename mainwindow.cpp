@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     clientView(new ClientView(this)),
     rentView(new RentView(this))
 {
+
     ui->setupUi(this);
     ui->carTableView->setModel(carView);
     ui->carTableView->verticalHeader()->setVisible(false);
