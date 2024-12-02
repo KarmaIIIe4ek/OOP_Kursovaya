@@ -70,7 +70,7 @@ QVariant RentView::headerData(int section, Qt::Orientation orientation, int role
 
     switch (section) {
     case 0:
-        return "ID";
+        return "ID Аренды";
     case 1:
         return "ID Клиента";
     case 2:

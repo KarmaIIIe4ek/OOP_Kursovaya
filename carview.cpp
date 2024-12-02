@@ -94,7 +94,7 @@ QVariant CarView::headerData(int section, Qt::Orientation orientation, int role)
 
     switch (section) {
     case 0:
-        return "ID";
+        return "ID Автомобиля";
     case 1:
         return "Номер";
     case 2:
