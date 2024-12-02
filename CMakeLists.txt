@@ -23,6 +23,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(OOP_Kursovaya
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        car.h car.cpp
+        carview.h carview.cpp
+        client.h client.cpp
+        clientview.h clientview.cpp
+        rent.h rent.cpp
+        rentview.h rentview.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET OOP_Kursovaya APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
