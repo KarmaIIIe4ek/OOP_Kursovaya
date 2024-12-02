@@ -13,8 +13,14 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->carTableView->setModel(carView);
+    ui->carTableView->verticalHeader()->setVisible(false);
+    ui->carTableView->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->clientTableView->setModel(clientView);
+    ui->clientTableView->verticalHeader()->setVisible(false);
+    ui->clientTableView->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->rentalsTableView->setModel(rentView);
+    ui->rentalsTableView->verticalHeader()->setVisible(false);
+    ui->rentalsTableView->setSelectionMode(QAbstractItemView::SingleSelection);
     connect(this, SIGNAL(notifyObservers()), this, SLOT(update()));
     setWindowState(Qt::WindowMaximized);
 }
@@ -41,7 +47,7 @@ void MainWindow::on_addCarButton_clicked()
     QLineEdit colorEdit;
     QCheckBox availabilityCheck;
 
-    formLayout.addRow("ID:", &idEdit);
+    formLayout.addRow("ID Автомобиля:", &idEdit);
     formLayout.addRow("Номер авто:", &numberEdit);
     formLayout.addRow("Марка авто:", &brandEdit);
     formLayout.addRow("Цвет авто:", &colorEdit);
@@ -86,7 +92,7 @@ void MainWindow::on_editCarButton_clicked()
     QLineEdit colorEdit;
     QCheckBox availabilityCheck;
 
-    formLayout.addRow("ID:", &idEdit);
+    formLayout.addRow("ID Автомобиля:", &idEdit);
     formLayout.addRow("Номер авто:", &numberEdit);
     formLayout.addRow("Марка авто:", &brandEdit);
     formLayout.addRow("Цвет авто:", &colorEdit);

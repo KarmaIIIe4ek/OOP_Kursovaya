@@ -84,7 +84,7 @@ QVariant ClientView::headerData(int section, Qt::Orientation orientation, int ro
     }
     switch (section) {
     case 0:
-        return "ID";
+        return "ID Клиента";
     case 1:
         return "Фамилия";
     case 2:
