@@ -9,7 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow),
     carView(new CarView(this)),
     clientView(new ClientView(this)),
-    rentView(new RentView(this))
+    rentView(new RentView(this)),
+    blacklistView(new BlacklistView(this))
 {
 
     ui->setupUi(this);
@@ -22,6 +23,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->rentalsTableView->setModel(rentView);
     ui->rentalsTableView->verticalHeader()->setVisible(false);
     ui->rentalsTableView->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->blackListTableView->setModel(blacklistView);
+    ui->blackListTableView->verticalHeader()->setVisible(false);
+    ui->blackListTableView->setSelectionMode(QAbstractItemView::SingleSelection);
     connect(this, SIGNAL(notifyObservers()), this, SLOT(update()));
     setWindowState(Qt::WindowMaximized);
 }
@@ -348,5 +352,43 @@ void MainWindow::on_returnFromRentalButton_clicked()
     rentView->removeRent(index.row());
 
     emit notifyObservers();
+}
+
+
+void MainWindow::on_addBlacklistButton_clicked()
+{
+    QModelIndex index = ui->clientTableView->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this, "Ошибка", "Не выбран клиент для добавления в ЧС.");
+        return;
+    }
+
+    Client *client = clientView->clients.at(index.row());
+
+    QDialog dialog;
+    QFormLayout formLayout(&dialog);
+
+    QLineEdit idEdit;
+    QTextEdit reasonEdit;
+
+    formLayout.addRow("ID:", &idEdit);
+    formLayout.addRow("Причина:", &reasonEdit);
+
+    QPushButton okButton("OK");
+    formLayout.addRow(&okButton);
+    QObject::connect(&okButton, &QPushButton::clicked, &dialog, &QDialog::accept);
+    if (dialog.exec() == QDialog::Accepted) {
+        Blacklist *blacklistWasCreated = blacklistView->findBlacklistByIdClient(client->getId());
+        if (blacklistWasCreated != nullptr) {
+            QMessageBox::warning(this, "Ошибка", "Клиент с таким ID не может быть добавлен в ЧС");
+            return;
+        }
+        int id = idEdit.text().toInt();
+        QDate currentDate = QDate::currentDate();
+        QLocale locale = QLocale::system(); // Используем системные настройки
+        QString formattedDate = locale.toString(currentDate, "dd_MM_yyyy");
+        Blacklist *blacklist = new Blacklist(id, client->getId(), formattedDate, reasonEdit.toPlainText());
+        blacklistView->addBlacklist(blacklist);
+    }
 }
 

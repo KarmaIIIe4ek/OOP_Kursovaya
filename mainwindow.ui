@@ -219,7 +219,7 @@ QTableView::item {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -253,7 +253,7 @@ QPushButton:hover {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -287,7 +287,7 @@ QPushButton:hover {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -445,7 +445,7 @@ QTableView::item {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -479,7 +479,7 @@ QPushButton:hover {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -513,7 +513,7 @@ QPushButton:hover {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -523,7 +523,7 @@ QPushButton:hover {
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="addBlacklistButton">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -547,7 +547,7 @@ QPushButton:hover {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -736,14 +736,19 @@ QTableView::item {
                  <bold>true</bold>
                 </font>
                </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
                <property name="styleSheet">
                 <string notr="true">
-
 QLineEdit {
-	color: #003042;
     border: 2px solid #0C65AF; /* Красная рамка толщиной 2 пикселя */
+	padding-left: 10px;
     border-radius: 6px; /* Скругление углов на 5 пикселей */
 }</string>
+               </property>
+               <property name="text">
+                <string>0</string>
                </property>
                <property name="readOnly">
                 <bool>true</bool>
@@ -786,7 +791,7 @@ QLineEdit {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -823,7 +828,7 @@ QPushButton:hover {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -860,7 +865,7 @@ QPushButton:hover {
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
-	  color: #72CCEE;
+	  color: #000;
 }
 </string>
               </property>
@@ -962,7 +967,7 @@ QTableView::item {
              <number>200</number>
             </attribute>
             <attribute name="horizontalHeaderDefaultSectionSize">
-             <number>367</number>
+             <number>458</number>
             </attribute>
             <attribute name="horizontalHeaderStretchLastSection">
              <bool>false</bool>
