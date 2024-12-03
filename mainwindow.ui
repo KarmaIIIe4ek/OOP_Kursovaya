@@ -213,11 +213,13 @@ QTableView::item {
     text-align: center;
 	border: 2px solid #303030;
 	border-radius:30px;
-	background-color: rgb(255, 255, 255);
+	background: #72CCEE;
+	color: #003042;
 }
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
+	  color: #72CCEE;
 }
 </string>
               </property>
@@ -245,11 +247,13 @@ QPushButton:hover {
     text-align: center;
 	border: 2px solid #303030;
 	border-radius:30px;
-	background-color: rgb(255, 255, 255);
+	background: #72CCEE;
+	color: #003042;
 }
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
+	  color: #72CCEE;
 }
 </string>
               </property>
@@ -277,11 +281,13 @@ QPushButton:hover {
     text-align: center;
 	border: 2px solid #303030;
 	border-radius:30px;
-	background-color: rgb(255, 255, 255);
+	background: #72CCEE;
+	color: #003042;
 }
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
+	  color: #72CCEE;
 }
 </string>
               </property>
@@ -409,7 +415,7 @@ QTableView::item {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <property name="spacing">
-             <number>80</number>
+             <number>60</number>
             </property>
             <item>
              <widget class="QPushButton" name="addClientButton">
@@ -425,21 +431,26 @@ QTableView::item {
                 <bold>true</bold>
                </font>
               </property>
+              <property name="contextMenuPolicy">
+               <enum>Qt::DefaultContextMenu</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
     text-align: center;
 	border: 2px solid #303030;
 	border-radius:30px;
-	background-color: rgb(255, 255, 255);
+	background: #72CCEE;
+	color: #003042;
 }
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
+	  color: #72CCEE;
 }
 </string>
               </property>
               <property name="text">
-               <string>Добавить новую запись о клиенте</string>
+               <string>Добавить новую запись</string>
               </property>
              </widget>
             </item>
@@ -462,16 +473,18 @@ QPushButton:hover {
     text-align: center;
 	border: 2px solid #303030;
 	border-radius:30px;
-	background-color: rgb(255, 255, 255);
+	background: #72CCEE;
+	color: #003042;
 }
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
+	  color: #72CCEE;
 }
 </string>
               </property>
               <property name="text">
-               <string>Редактировать запись о клиенте</string>
+               <string>Редактировать запись</string>
               </property>
              </widget>
             </item>
@@ -494,16 +507,52 @@ QPushButton:hover {
     text-align: center;
 	border: 2px solid #303030;
 	border-radius:30px;
-	background-color: rgb(255, 255, 255);
+	background: #72CCEE;
+	color: #003042;
 }
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
+	  color: #72CCEE;
 }
 </string>
               </property>
               <property name="text">
-               <string>Удалить запись о клиенте</string>
+               <string>Удалить запись</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>61</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    text-align: center;
+	border: 2px solid #303030;
+	border-radius:30px;
+	background: #72CCEE;
+	color: #003042;
+}
+QPushButton:hover {
+ 	 /* Стили при наведении */
+ 	  background-color: #EEE; 
+	  color: #72CCEE;
+}
+</string>
+              </property>
+              <property name="text">
+               <string>Добавить в ЧС</string>
               </property>
              </widget>
             </item>
@@ -633,9 +682,9 @@ QTableView::item {
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>0</y>
+                 <y>-1</y>
                  <width>1681</width>
-                 <height>50</height>
+                 <height>61</height>
                 </rect>
                </property>
                <property name="minimumSize">
@@ -689,7 +738,9 @@ QTableView::item {
                </property>
                <property name="styleSheet">
                 <string notr="true">
+
 QLineEdit {
+	color: #003042;
     border: 2px solid #0C65AF; /* Красная рамка толщиной 2 пикселя */
     border-radius: 6px; /* Скругление углов на 5 пикселей */
 }</string>
@@ -729,11 +780,13 @@ QLineEdit {
     text-align: center;
 	border: 2px solid #303030;
 	border-radius:30px;
-	background-color: rgb(255, 255, 255);
+	background: #72CCEE;
+	color: #003042;
 }
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
+	  color: #72CCEE;
 }
 </string>
               </property>
@@ -764,11 +817,13 @@ QPushButton:hover {
     text-align: center;
 	border: 2px solid #303030;
 	border-radius:30px;
-	background-color: rgb(255, 255, 255);
+	background: #72CCEE;
+	color: #003042;
 }
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
+	  color: #72CCEE;
 }
 </string>
               </property>
@@ -799,11 +854,13 @@ QPushButton:hover {
     text-align: center;
 	border: 2px solid #303030;
 	border-radius:30px;
-	background-color: rgb(255, 255, 255);
+	background: #72CCEE;
+	color: #003042;
 }
 QPushButton:hover {
  	 /* Стили при наведении */
  	  background-color: #EEE; 
+	  color: #72CCEE;
 }
 </string>
               </property>
@@ -835,12 +892,196 @@ QPushButton:hover {
        </widget>
        <widget class="QWidget" name="tab_5">
         <attribute name="title">
-         <string>Страница</string>
+         <string>Чёрный список</string>
         </attribute>
+        <widget class="QWidget" name="verticalLayoutWidget_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>1851</width>
+           <height>871</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="spacing">
+           <number>49</number>
+          </property>
+          <item>
+           <widget class="QTableView" name="blackListTableView">
+            <property name="font">
+             <font>
+              <family>Segoe UI</family>
+              <pointsize>16</pointsize>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="toolTipDuration">
+             <number>-1</number>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTableView {
+    border: 2px solid #0C65AF;
+	padding: 6px;
+	border-radius: 8px;
+	 font: 16pt &quot;Segoe UI&quot;;
+	 text-align: center;
+
+   }
+   
+QHeaderView::section {
+ 	border-right: none; /* Убираем бордер у заголовков */
+	padding: 6px;
+	 font: 16pt &quot;Segoe UI&quot;;
+ }
+
+QTableView::item {
+    text-align: center; /* Выравнивание по горизонтали */
+}
+
+
+	</string>
+            </property>
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContents</enum>
+            </property>
+            <property name="dragEnabled">
+             <bool>false</bool>
+            </property>
+            <property name="sortingEnabled">
+             <bool>false</bool>
+            </property>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderMinimumSectionSize">
+             <number>200</number>
+            </attribute>
+            <attribute name="horizontalHeaderDefaultSectionSize">
+             <number>367</number>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>113</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <property name="spacing">
+             <number>80</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="editBlacklistButton">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>61</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    text-align: center;
+	border: 2px solid #303030;
+	border-radius:30px;
+	background: #72CCEE;
+	color: #003042;
+}
+QPushButton:hover {
+ 	 /* Стили при наведении */
+ 	  background-color: #EEE; 
+	  color: #72CCEE;
+}
+</string>
+              </property>
+              <property name="text">
+               <string>Редактировать запись в ЧС</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="deleteFromBlacklistButton">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>61</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    text-align: center;
+	border: 2px solid #303030;
+	border-radius:30px;
+	background: #72CCEE;
+	color: #003042;
+}
+QPushButton:hover {
+ 	 /* Стили при наведении */
+ 	  background-color: #EEE; 
+	  color: #72CCEE;
+}
+</string>
+              </property>
+              <property name="text">
+               <string>Удалить запись из ЧС</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>60</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
        </widget>
        <widget class="QWidget" name="tab_6">
         <attribute name="title">
-         <string>Страница</string>
+         <string>СТО Партнёры</string>
         </attribute>
        </widget>
       </widget>
