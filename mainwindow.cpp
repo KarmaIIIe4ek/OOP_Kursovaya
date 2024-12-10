@@ -9,7 +9,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow),
     carView(new CarView(this)),
     clientView(new ClientView(this)),
-    rentView(new RentView(this))
+    rentView(new RentView(this)),
+    blacklistView(new BlacklistView(this)),
+    stoPartnerView(new STOPartnerView(this))
+
 {
 
     ui->setupUi(this);
@@ -22,6 +25,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->rentalsTableView->setModel(rentView);
     ui->rentalsTableView->verticalHeader()->setVisible(false);
     ui->rentalsTableView->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->blackListTableView->setModel(blacklistView);
+    ui->blackListTableView->verticalHeader()->setVisible(false);
+    ui->blackListTableView->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->stoTableView->setModel(stoPartnerView);
+    ui->stoTableView->verticalHeader()->setVisible(false);
+    ui->stoTableView->setSelectionMode(QAbstractItemView::SingleSelection);
+
     connect(this, SIGNAL(notifyObservers()), this, SLOT(update()));
     setWindowState(Qt::WindowMaximized);
 }
@@ -348,5 +358,153 @@ void MainWindow::on_returnFromRentalButton_clicked()
     rentView->removeRent(index.row());
 
     emit notifyObservers();
+}
+
+
+void MainWindow::on_addBlacklistButton_clicked()
+{
+    QModelIndex index = ui->clientTableView->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this, "Ошибка", "Не выбран клиент для добавления в ЧС.");
+        return;
+    }
+
+    Client *client = clientView->clients.at(index.row());
+
+    QDialog dialog;
+    QFormLayout formLayout(&dialog);
+
+    QLineEdit idEdit;
+    QTextEdit reasonEdit;
+
+    formLayout.addRow("ID:", &idEdit);
+    formLayout.addRow("Причина:", &reasonEdit);
+
+    QPushButton okButton("OK");
+    formLayout.addRow(&okButton);
+    QObject::connect(&okButton, &QPushButton::clicked, &dialog, &QDialog::accept);
+    if (dialog.exec() == QDialog::Accepted) {
+        Blacklist *blacklistWasCreated = blacklistView->findBlacklistByIdClient(client->getId());
+        if (blacklistWasCreated != nullptr) {
+            QMessageBox::warning(this, "Ошибка", "Клиент с таким ID не может быть добавлен в ЧС");
+            return;
+        }
+        int id = idEdit.text().toInt();
+        QDate currentDate = QDate::currentDate();
+        QLocale locale = QLocale::system(); // Используем системные настройки
+        QString formattedDate = locale.toString(currentDate, "dd.MM.yyyy");
+        Blacklist *blacklist = new Blacklist(id, client->getId(), formattedDate, reasonEdit.toPlainText());
+        blacklistView->addBlacklist(blacklist);
+    }
+}
+
+
+void MainWindow::on_deleteFromBlacklistButton_clicked()
+{
+    QModelIndex index = ui->blackListTableView->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this, "Ошибка", "Не выбран клиент для удаления.");
+        return;
+    }
+
+    bool temp = blacklistView->removeBlacklist(index.row());
+    if (!temp){
+        QMessageBox::warning(this, "Ошибка", "Нельзя удалить клиента, так как у него есть активная аренда.");
+    }
+    qDebug() << blacklistView->blacklists.length()<< Qt::endl;
+}
+
+
+
+
+void MainWindow::on_addStoButton_clicked()
+{
+    QDialog dialog;
+    QFormLayout formLayout(&dialog);
+
+    QLineEdit idEdit;
+    QLineEdit addressEdit;
+    QLineEdit numberEdit;
+    QLineEdit dateStartEdit;
+    QLineEdit dateFinalEdit;
+
+    formLayout.addRow("ID Записи:", &idEdit);
+    formLayout.addRow("Адрес:", &addressEdit);
+    formLayout.addRow("Договор №:", &numberEdit);
+    formLayout.addRow("Начало действия:", &dateStartEdit);
+    formLayout.addRow("Окончание действия:", &dateFinalEdit);
+
+    QPushButton okButton("OK");
+    formLayout.addRow(&okButton);
+    QObject::connect(&okButton, &QPushButton::clicked, &dialog, &QDialog::accept);
+    if (dialog.exec() == QDialog::Accepted) {
+        int id = idEdit.text().toInt();
+        QString address = addressEdit.text();
+        QString number = numberEdit.text();
+        QString dateStart = dateStartEdit.text();
+        QString dateFinal = dateFinalEdit.text();
+        STOPartner *stoPartner = new STOPartner(id, address, number, dateStart, dateFinal);
+        STOPartner *stoPartnerWasCreated = stoPartnerView->findSTOPartnerById(stoPartner->getId());
+        if (stoPartnerWasCreated != nullptr) {
+            QMessageBox::warning(this, "Ошибка", "Договор с таким ID уже существует.");
+            return;
+        }
+        stoPartnerView->addSTOPartner(stoPartner);
+    }
+}
+
+
+void MainWindow::on_deleteStoButton_clicked()
+{
+    QModelIndex index = ui->stoTableView->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this, "Ошибка", "Не выбран договор для удаления.");
+        return;
+    }
+
+    stoPartnerView->removeSTOPartner(index.row());
+}
+
+
+void MainWindow::on_editStoButton_clicked()
+{
+    QModelIndex index = ui->stoTableView->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this, "Ошибка", "Не выбран автомобиль для редактирования.");
+        return;
+    }
+
+    STOPartner *stoPartner = stoPartnerView->stoPartners.at(index.row());
+
+    QDialog dialog;
+    QFormLayout formLayout(&dialog);
+
+    QLineEdit idEdit;
+    QLineEdit addressEdit;
+    QLineEdit numberEdit;
+    QLineEdit dateStartEdit;
+    QLineEdit dateFinalEdit;
+
+    formLayout.addRow("ID Записи:", &idEdit);
+    formLayout.addRow("Адрес:", &addressEdit);
+    formLayout.addRow("Договор №:", &numberEdit);
+    formLayout.addRow("Начало действия:", &dateStartEdit);
+    formLayout.addRow("Окончание действия:", &dateFinalEdit);
+
+    QPushButton okButton("OK");
+    formLayout.addRow(&okButton);
+    QObject::connect(&okButton, &QPushButton::clicked, &dialog, &QDialog::accept);
+    if (dialog.exec() == QDialog::Accepted) {
+        STOPartner *stoPartnerWasCreated = stoPartnerView->findSTOPartnerById(idEdit.text().toInt());
+        if (stoPartnerWasCreated != nullptr && stoPartner->getId() != idEdit.text().toInt()) {
+            QMessageBox::warning(this, "Ошибка", "Договор с таким ID уже существует.");
+            return;
+        }
+        stoPartner->setId(idEdit.text().toInt());
+        stoPartner->setAddress(addressEdit.text());
+        stoPartner->setNumber(numberEdit.text());
+        stoPartner->setDateStart(dateStartEdit.text());
+        stoPartner->setDateFinal(dateFinalEdit.text());
+    }
 }
 

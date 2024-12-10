@@ -9,10 +9,14 @@
 #include "carview.h"
 #include "rent.h"
 #include "rentview.h"
+#include "blacklistview.h"
+#include "stopartnerview.h"
 #include <QLineEdit>
 #include <QFormLayout>
 #include <QCheckBox>
 #include <QDateEdit>
+#include <QTextEdit>
+#include <QLocale>
 
 namespace Ui {
 class MainWindow;
@@ -45,6 +49,16 @@ private slots:
 
     void on_returnFromRentalButton_clicked();
 
+    void on_addBlacklistButton_clicked();
+
+    void on_deleteFromBlacklistButton_clicked();
+
+    void on_addStoButton_clicked();
+
+    void on_deleteStoButton_clicked();
+
+    void on_editStoButton_clicked();
+
 public slots:
     void update();
 
@@ -54,6 +68,8 @@ private:
     CarView *carView;
     ClientView *clientView;
     RentView *rentView;
+    BlacklistView *blacklistView;
+    STOPartnerView *stoPartnerView;
 
 signals:
     void notifyObservers();
