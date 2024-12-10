@@ -31,6 +31,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         rentview.h rentview.cpp
         blacklist.h blacklist.cpp
         blacklistview.h blacklistview.cpp
+        stopartner.h stopartner.cpp
+        stopartnerview.h stopartnerview.cpp
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET OOP_Kursovaya APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
