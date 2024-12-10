@@ -50,6 +50,8 @@ private slots:
 
     void on_addBlacklistButton_clicked();
 
+    void on_deleteFromBlacklistButton_clicked();
+
 public slots:
     void update();
 

@@ -386,9 +386,25 @@ void MainWindow::on_addBlacklistButton_clicked()
         int id = idEdit.text().toInt();
         QDate currentDate = QDate::currentDate();
         QLocale locale = QLocale::system(); // Используем системные настройки
-        QString formattedDate = locale.toString(currentDate, "dd_MM_yyyy");
+        QString formattedDate = locale.toString(currentDate, "dd.MM.yyyy");
         Blacklist *blacklist = new Blacklist(id, client->getId(), formattedDate, reasonEdit.toPlainText());
         blacklistView->addBlacklist(blacklist);
     }
+}
+
+
+void MainWindow::on_deleteFromBlacklistButton_clicked()
+{
+    QModelIndex index = ui->blackListTableView->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this, "Ошибка", "Не выбран клиент для удаления.");
+        return;
+    }
+
+    bool temp = blacklistView->removeBlacklist(index.row());
+    if (!temp){
+        QMessageBox::warning(this, "Ошибка", "Нельзя удалить клиента, так как у него есть активная аренда.");
+    }
+    qDebug() << blacklistView->blacklists.length()<< Qt::endl;
 }
 
