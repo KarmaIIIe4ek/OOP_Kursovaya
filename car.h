@@ -12,8 +12,8 @@ private:
     bool availability;
 
 public:
-    Car(int id, QString number, QString brand, QString color, bool avai);
 
+    Car(int id, QString number, QString brand, QString color, bool availability);
 
     int getId() const;
     QString getNumber() const;

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>4232_Yuragin_KursovoiProect</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="gridLayoutWidget">
@@ -39,7 +39,7 @@
         </font>
        </property>
        <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
+        <enum>Qt::FocusPolicy::NoFocus</enum>
        </property>
        <property name="styleSheet">
         <string notr="true">QTabBar::tab {
@@ -62,7 +62,7 @@ QTabBar::tab:selected {
 </string>
        </property>
        <property name="currentIndex">
-        <number>4</number>
+        <number>0</number>
        </property>
        <property name="iconSize">
         <size>
@@ -151,7 +151,7 @@ QTableView::item {
              <number>1</number>
             </property>
             <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::AdjustToContents</enum>
+             <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
             </property>
             <property name="dragEnabled">
              <bool>false</bool>
@@ -176,10 +176,10 @@ QTableView::item {
           <item>
            <spacer name="verticalSpacer_4">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -301,10 +301,10 @@ QPushButton:hover {
           <item>
            <spacer name="verticalSpacer_2">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -399,10 +399,10 @@ QTableView::item {
           <item>
            <spacer name="verticalSpacer_5">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -432,7 +432,7 @@ QTableView::item {
                </font>
               </property>
               <property name="contextMenuPolicy">
-               <enum>Qt::DefaultContextMenu</enum>
+               <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
@@ -561,10 +561,10 @@ QPushButton:hover {
           <item>
            <spacer name="verticalSpacer_3">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -673,10 +673,10 @@ QTableView::item {
                <string notr="true">border:none;</string>
               </property>
               <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
+               <enum>QFrame::Shape::StyledPanel</enum>
               </property>
               <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+               <enum>QFrame::Shadow::Raised</enum>
               </property>
               <widget class="QLabel" name="label">
                <property name="geometry">
@@ -706,7 +706,7 @@ QTableView::item {
                 <string>Активных аренд:</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
               </widget>
               <widget class="QLineEdit" name="lineEdit">
@@ -879,10 +879,10 @@ QPushButton:hover {
           <item>
            <spacer name="verticalSpacer">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -952,7 +952,7 @@ QTableView::item {
              <number>1</number>
             </property>
             <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::AdjustToContents</enum>
+             <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
             </property>
             <property name="dragEnabled">
              <bool>false</bool>
@@ -977,10 +977,10 @@ QTableView::item {
           <item>
            <spacer name="verticalSpacer_6">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -1034,10 +1034,10 @@ QPushButton:hover {
           <item>
            <spacer name="verticalSpacer_7">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -1107,7 +1107,7 @@ QTableView::item {
              <number>1</number>
             </property>
             <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::AdjustToContents</enum>
+             <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
             </property>
             <property name="dragEnabled">
              <bool>false</bool>
@@ -1132,10 +1132,10 @@ QTableView::item {
           <item>
            <spacer name="verticalSpacer_8">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -1257,10 +1257,10 @@ QPushButton:hover {
           <item>
            <spacer name="verticalSpacer_9">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>

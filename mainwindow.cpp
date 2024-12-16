@@ -266,6 +266,10 @@ void MainWindow::on_rentOutCarButton_clicked()
             QMessageBox::warning(this, "Ошибка", "Клиент с таким ID не существует.");
             return;
         }
+        if (blacklistView->findBlacklistByIdClient(clientWasCreated->getId())){
+            QMessageBox::warning(this, "Ошибка", "Клиент с таким ID находится в \"Чёрном списке\".");
+            return;
+        }
         Car *carWasCreated = carView->findCarById(carId);
         if (carWasCreated == nullptr) {
             QMessageBox::warning(this, "Ошибка", "Автомобиль с таким ID не существует.");

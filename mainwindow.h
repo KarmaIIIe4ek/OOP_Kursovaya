@@ -32,31 +32,18 @@ public:
 
 private slots:
     void on_addCarButton_clicked();
-
     void on_editCarButton_clicked();
-
     void on_deleteCarButton_clicked();
-
     void on_addClientButton_clicked();
-
     void on_editClientButton_clicked();
-
     void on_deleteClientButton_clicked();
-
     void on_rentOutCarButton_clicked();
-
     void on_editRentButton_clicked();
-
     void on_returnFromRentalButton_clicked();
-
     void on_addBlacklistButton_clicked();
-
     void on_deleteFromBlacklistButton_clicked();
-
     void on_addStoButton_clicked();
-
     void on_deleteStoButton_clicked();
-
     void on_editStoButton_clicked();
 
 public slots:
